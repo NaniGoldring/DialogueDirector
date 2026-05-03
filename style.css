@@ -44,6 +44,9 @@ h2 {
   font-size: 18px;
   margin: 0 0 12px;
 }
+.section-title {
+  margin-top: 22px;
+}
 
 .user-info,
 .sample {

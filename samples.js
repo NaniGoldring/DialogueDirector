@@ -1450,7 +1450,7 @@ window.SAMPLES = [
   },
 ];
 
-window.QUESTION_TEXT = "Considering the speaker references above, which generated dialogue (a or b) sounds more natural and faithful to the clean speaker?";
+window.QUESTION_TEXT = "Which recording is more likely to hear? (considering both speech and background noises)";
 
 // Shuffle which generated clip appears as (a) vs (b) per session, so listeners
 // can't tell baseline from noisy-input. Original identity is recorded in the payload.
