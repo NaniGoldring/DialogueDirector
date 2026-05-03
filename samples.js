@@ -1461,4 +1461,4 @@ window.RANDOMIZE_AB = true;
 window.SAMPLES_PER_SESSION = 7;
 
 // Empty -> downloads JSON locally; set to a Google Apps Script Web App URL to POST.
-window.SUBMIT_URL = "https://script.google.com/macros/s/AKfycbytq3hQPQwXXGmFLwx9K1ef-waqDvC-YU7dopArz5Cg34YSzVKSdiMYDjM8P0Dnaj5zJQ/exec";
+window.SUBMIT_URL = "https://script.google.com/macros/s/AKfycbyao7odb7iba1fSInyyuXw17jDwMgpPtAK8I52lt8CT61BERiZxu8UfoZDhPBlZp16pvQ/exec";
