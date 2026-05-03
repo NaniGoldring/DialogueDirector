@@ -1,0 +1,217 @@
+:root {
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --border: #e2e5ea;
+  --text: #1c1f24;
+  --muted: #5b6470;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --ref-bg: #eef4ff;
+  --ref-border: #b9cdf5;
+  --gen-bg: #fff7ed;
+  --gen-border: #fed7aa;
+  --error: #dc2626;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+header h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+}
+
+.intro {
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.user-info,
+.sample {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.user-info { margin-top: 24px; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.field:last-child { margin-bottom: 0; }
+
+.field label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.field input {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.sample-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.sample-header h3 {
+  margin: 0;
+  font-size: 17px;
+}
+.sample-header .question {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 4px 0 14px;
+}
+
+.audio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.audio-cell {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fafbfc;
+}
+.audio-cell.reference {
+  background: var(--ref-bg);
+  border-color: var(--ref-border);
+}
+.audio-cell.generated {
+  background: var(--gen-bg);
+  border-color: var(--gen-border);
+}
+
+.audio-cell .label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.audio-cell.generated .label { color: #c2410c; }
+.audio-cell.reference .label { color: #1e40af; }
+
+.audio-cell audio {
+  width: 100%;
+  display: block;
+}
+
+.choices {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+.choices label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  transition: all 0.15s ease;
+}
+.choices input[type="radio"] { margin: 0; }
+.choices label:hover { border-color: var(--accent); }
+.choices input[type="radio"]:checked + span {
+  color: var(--accent);
+  font-weight: 600;
+}
+.choices label:has(input:checked) {
+  border-color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.submit-row {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+button:hover { background: var(--accent-hover); }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.result {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.result.success { border-color: #86efac; background: #f0fdf4; }
+.result.error { border-color: #fca5a5; background: #fef2f2; color: var(--error); }
+.hidden { display: none; }
+
+.missing { border-color: var(--error) !important; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12); }
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .audio-grid { grid-template-columns: 1fr; }
+}

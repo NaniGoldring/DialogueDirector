@@ -1,0 +1,11 @@
+# macOS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Logs / runtime
+*.log
+
+# Local listener-downloaded results (when SUBMIT_URL is empty)
+eval_*.json
