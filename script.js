@@ -3,8 +3,16 @@
   const form = document.getElementById("poll-form");
   const submitBtn = document.getElementById("submit-btn");
   const resultBox = document.getElementById("result");
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
+
+  // Generate an anonymous, per-session respondent ID so all answers from
+  // one listener can be grouped together in the Sheet.
+  function makeRespondentId() {
+    if (window.crypto && crypto.randomUUID) {
+      return "r_" + crypto.randomUUID().slice(0, 8);
+    }
+    return "r_" + Math.random().toString(36).slice(2, 10);
+  }
+  const respondentId = makeRespondentId();
 
   const allSamples = window.SAMPLES || [];
   const question = window.QUESTION_TEXT || "Which sample do you prefer?";
@@ -95,7 +103,6 @@
     document.querySelectorAll(".sample.missing").forEach((el) => {
       el.classList.remove("missing");
     });
-    [nameInput, emailInput].forEach((el) => el.classList.remove("missing"));
   }
 
   function showResult(message, kind) {
@@ -132,11 +139,6 @@
     e.preventDefault();
     clearMissingHighlights();
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    if (!name) { nameInput.classList.add("missing"); nameInput.focus(); return; }
-    if (!email) { emailInput.classList.add("missing"); emailInput.focus(); return; }
-
     const { responses, firstMissing } = collectResponses();
     if (firstMissing) {
       firstMissing.classList.add("missing");
@@ -146,8 +148,7 @@
     }
 
     const payload = {
-      name,
-      email,
+      respondent_id: respondentId,
       submitted_at: new Date().toISOString(),
       user_agent: navigator.userAgent,
       responses,
@@ -177,9 +178,8 @@
         });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
-        const safeName = name.replace(/[^a-z0-9_-]+/gi, "_");
         a.href = url;
-        a.download = `eval_${safeName}_${Date.now()}.json`;
+        a.download = `eval_${respondentId}_${Date.now()}.json`;
         document.body.appendChild(a);
         a.click();
         a.remove();

@@ -27,8 +27,7 @@
 
 const HEADERS = [
   "submitted_at",
-  "name",
-  "email",
+  "respondent_id",     // anonymous per-session ID — groups all rows from one listener
   "sample_id",
   "choice",            // "a" | "b" | "tie"  (refers to ORIGINAL identity in samples.js)
   "ab_was_swapped_in_ui",
@@ -52,8 +51,7 @@ function doPost(e) {
 
     const rows = (data.responses || []).map(r => [
       data.submitted_at || new Date().toISOString(),
-      data.name || "",
-      data.email || "",
+      data.respondent_id || "",
       r.sample_id || "",
       r.choice || "",
       r.ab_was_swapped_in_ui === true,
