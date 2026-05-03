@@ -1458,7 +1458,7 @@ window.RANDOMIZE_AB = true;
 
 // How many questions to show per session. The page picks this many at random
 // from window.SAMPLES on each load. Set to 0 (or null) to show all of them.
-window.SAMPLES_PER_SESSION = 7;
+window.SAMPLES_PER_SESSION = 15;
 
 // Empty -> downloads JSON locally; set to a Google Apps Script Web App URL to POST.
 window.SUBMIT_URL = "https://script.google.com/macros/s/AKfycbyao7odb7iba1fSInyyuXw17jDwMgpPtAK8I52lt8CT61BERiZxu8UfoZDhPBlZp16pvQ/exec";
