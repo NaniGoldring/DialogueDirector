@@ -29,8 +29,10 @@ const HEADERS = [
   "submitted_at",
   "respondent_id",     // anonymous per-session ID — groups all rows from one listener
   "sample_id",
-  "choice",            // "a" | "b" | "tie"  (refers to ORIGINAL identity in samples.js)
-  "ab_was_swapped_in_ui",
+  "opponent",          // which competitor model "ours" was paired against this question
+  "winner",            // "ours" | "opponent" | "tie"  — derived from choice + ours_side
+  "choice",            // "a" | "b" | "tie"  — raw user pick (UI side)
+  "ours_side",         // "a" | "b"  — which UI side held the "ours" clip
   "question_index",
   "user_agent",
 ];
@@ -53,8 +55,10 @@ function doPost(e) {
       data.submitted_at || new Date().toISOString(),
       data.respondent_id || "",
       r.sample_id || "",
+      r.opponent || "",
+      r.winner || "",
       r.choice || "",
-      r.ab_was_swapped_in_ui === true,
+      r.ours_side || "",
       r.index === undefined ? "" : r.index,
       data.user_agent || "",
     ]);

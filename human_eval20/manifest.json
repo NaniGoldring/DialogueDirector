@@ -1,0 +1,402 @@
+[
+  {
+    "key": "032",
+    "transcript_file": "transcripts/032.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/032_spk1.flac",
+      "transcription": "for in the times before the great flood athens was the greatest and best of cities and did the noblest deeds and had the best constitution of any under the face of heaven"
+    },
+    "spk2": {
+      "audio_file": "refs/032_spk2.flac",
+      "transcription": "and this method of treating the case was much more effectual in making them disposed to avoid committing a similar fault another time than any direct rebukes or expressions of displeasure addressed personally to them would have been"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/032.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/032.wav",
+      "moss_ttsd": "outputs/moss_ttsd/032.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/032.wav",
+      "dia": "outputs/dia/032.wav"
+    }
+  },
+  {
+    "key": "044",
+    "transcript_file": "transcripts/044.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/044_spk1.flac",
+      "transcription": "what would become of your gun were i to kidnap you"
+    },
+    "spk2": {
+      "audio_file": "refs/044_spk2.flac",
+      "transcription": "it is only a pencil outline by edward burne jones in illustration of the story of psyche it is the introduction of psyche after all her troubles into heaven"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/044.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/044.wav",
+      "moss_ttsd": "outputs/moss_ttsd/044.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/044.wav",
+      "dia": "outputs/dia/044.wav"
+    }
+  },
+  {
+    "key": "049",
+    "transcript_file": "transcripts/049.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/049_spk1.flac",
+      "transcription": "to their sorrow they were soon undeceived"
+    },
+    "spk2": {
+      "audio_file": "refs/049_spk2.flac",
+      "transcription": "the fireball half of it white half azure blue and the size of a ten inch shell moved slowly about the raft but revolving on its own axis with astonishing velocity as if whipped round by the force of the whirlwind"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/049.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/049.wav",
+      "moss_ttsd": "outputs/moss_ttsd/049.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/049.wav",
+      "dia": "outputs/dia/049.wav"
+    }
+  },
+  {
+    "key": "104",
+    "transcript_file": "transcripts/104.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/104_spk1.flac",
+      "transcription": "why an ear a whirlpool fierce to draw creations in"
+    },
+    "spk2": {
+      "audio_file": "refs/104_spk2.flac",
+      "transcription": "enter hamlet with his favourite boar hound"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/104.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/104.wav",
+      "moss_ttsd": "outputs/moss_ttsd/104.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/104.wav",
+      "dia": "outputs/dia/104.wav"
+    }
+  },
+  {
+    "key": "120",
+    "transcript_file": "transcripts/120.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/120_spk1.flac",
+      "transcription": "you have been so ill my poor rachel"
+    },
+    "spk2": {
+      "audio_file": "refs/120_spk2.flac",
+      "transcription": "the vicious character of sin is brought out by the words who gave himself for our sins"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/120.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/120.wav",
+      "moss_ttsd": "outputs/moss_ttsd/120.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/120.wav",
+      "dia": "outputs/dia/120.wav"
+    }
+  },
+  {
+    "key": "129",
+    "transcript_file": "transcripts/129.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/129_spk1.flac",
+      "transcription": "were i but already on the cart"
+    },
+    "spk2": {
+      "audio_file": "refs/129_spk2.flac",
+      "transcription": "thus if i recognize a thing the occasion of its previous existence in virtue of which i recognize it forms part of my experience by definition recognition will be one of the marks by which my experience is singled out from the rest of the world"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/129.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/129.wav",
+      "moss_ttsd": "outputs/moss_ttsd/129.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/129.wav",
+      "dia": "outputs/dia/129.wav"
+    }
+  },
+  {
+    "key": "142",
+    "transcript_file": "transcripts/142.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/142_spk1.flac",
+      "transcription": "for the first day sir i think that what you have done gives great hopes of you and without any doubt you will make rapid progress"
+    },
+    "spk2": {
+      "audio_file": "refs/142_spk2.flac",
+      "transcription": "how comes it that while the first beatitude promises the kingdom of heaven to the poor of heart the second beatitude promises also to the meek that they shall possess the land"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/142.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/142.wav",
+      "moss_ttsd": "outputs/moss_ttsd/142.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/142.wav",
+      "dia": "outputs/dia/142.wav"
+    }
+  },
+  {
+    "key": "162",
+    "transcript_file": "transcripts/162.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/162_spk1.flac",
+      "transcription": "the strong position held by the edison system under the strenuous competition that was already springing up was enormously improved by the introduction of the three wire system and it gave an immediate impetus to incandescent lighting"
+    },
+    "spk2": {
+      "audio_file": "refs/162_spk2.flac",
+      "transcription": "of mark wylder i say this his name has been for years hateful to me and recently it has become frightful and you will promise me simply this that you will never ask me to speak again about him"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/162.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/162.wav",
+      "moss_ttsd": "outputs/moss_ttsd/162.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/162.wav",
+      "dia": "outputs/dia/162.wav"
+    }
+  },
+  {
+    "key": "226",
+    "transcript_file": "transcripts/226.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/226_spk1.flac",
+      "transcription": "thee study medicine"
+    },
+    "spk2": {
+      "audio_file": "refs/226_spk2.flac",
+      "transcription": "broad as the prairies and free in thought as the winds that sweep them he is idiosyncratically opposed to loose and wasteful methods to plans of empire that neglect the poor at the gate"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/226.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/226.wav",
+      "moss_ttsd": "outputs/moss_ttsd/226.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/226.wav",
+      "dia": "outputs/dia/226.wav"
+    }
+  },
+  {
+    "key": "237",
+    "transcript_file": "transcripts/237.txt",
+    "reference_source": "librispeech_test_clean",
+    "spk1": {
+      "audio_file": "refs/237_spk1.flac",
+      "transcription": "they remain divine regardless of men's opinion"
+    },
+    "spk2": {
+      "audio_file": "refs/237_spk2.flac",
+      "transcription": "why it's in missouri somewhere on the frontier i think we'll get a map"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/237.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/237.wav",
+      "moss_ttsd": "outputs/moss_ttsd/237.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/237.wav",
+      "dia": "outputs/dia/237.wav"
+    }
+  },
+  {
+    "key": "259",
+    "transcript_file": "transcripts/259.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/259_spk1.wav",
+      "transcription": "And that person ended up being a really horribly racist South African white person."
+    },
+    "spk2": {
+      "audio_file": "refs/259_spk2.wav",
+      "transcription": "And after the prom, I went back to her house and ate cherry pie with her mom."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/259.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/259.wav",
+      "moss_ttsd": "outputs/moss_ttsd/259.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/259.wav",
+      "dia": "outputs/dia/259.wav"
+    }
+  },
+  {
+    "key": "319",
+    "transcript_file": "transcripts/319.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/319_spk1.wav",
+      "transcription": "It's about safety, control, feedback, and ultimately the most important thing at a race."
+    },
+    "spk2": {
+      "audio_file": "refs/319_spk2.wav",
+      "transcription": "The auditorium is a prime example of that. The auditorium was renovated in the late 1990s."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/319.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/319.wav",
+      "moss_ttsd": "outputs/moss_ttsd/319.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/319.wav",
+      "dia": "outputs/dia/319.wav"
+    }
+  },
+  {
+    "key": "499",
+    "transcript_file": "transcripts/499.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/499_spk1.wav",
+      "transcription": "the E string, so it's sort of the root of whatever chord you're going to be in in that position."
+    },
+    "spk2": {
+      "audio_file": "refs/499_spk2.wav",
+      "transcription": "So crunchy from the rocks, but it's doable."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/499.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/499.wav",
+      "moss_ttsd": "outputs/moss_ttsd/499.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/499.wav",
+      "dia": "outputs/dia/499.wav"
+    }
+  },
+  {
+    "key": "641",
+    "transcript_file": "transcripts/641.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/641_spk1.wav",
+      "transcription": "been working on for the last couple of months. A view from the bridge looking over the Holy Oak Dam and Mount Tom in the background."
+    },
+    "spk2": {
+      "audio_file": "refs/641_spk2.wav",
+      "transcription": "It's not really building a bridge, you're essentially just creating more infighting."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/641.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/641.wav",
+      "moss_ttsd": "outputs/moss_ttsd/641.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/641.wav",
+      "dia": "outputs/dia/641.wav"
+    }
+  },
+  {
+    "key": "686",
+    "transcript_file": "transcripts/686.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/686_spk1.wav",
+      "transcription": "a tough guy. Fighting at a high level in a"
+    },
+    "spk2": {
+      "audio_file": "refs/686_spk2.wav",
+      "transcription": "Before we actually started touring here, I had never been to America."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/686.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/686.wav",
+      "moss_ttsd": "outputs/moss_ttsd/686.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/686.wav",
+      "dia": "outputs/dia/686.wav"
+    }
+  },
+  {
+    "key": "721",
+    "transcript_file": "transcripts/721.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/721_spk1.wav",
+      "transcription": "Jamie, I think this one's gonna win your heart. You got it?"
+    },
+    "spk2": {
+      "audio_file": "refs/721_spk2.wav",
+      "transcription": "You can slide it around you can pretty much do"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/721.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/721.wav",
+      "moss_ttsd": "outputs/moss_ttsd/721.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/721.wav",
+      "dia": "outputs/dia/721.wav"
+    }
+  },
+  {
+    "key": "758",
+    "transcript_file": "transcripts/758.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/758_spk1.wav",
+      "transcription": "Don't be so hard on yourself, Peter. Getting babies to sleep isn't really a big brothery thing. It's more of a big sistery thing. Just stick to raiding vegetable patches."
+    },
+    "spk2": {
+      "audio_file": "refs/758_spk2.wav",
+      "transcription": "You didn't understand my sensation I'm feeling love in music long before when you"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/758.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/758.wav",
+      "moss_ttsd": "outputs/moss_ttsd/758.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/758.wav",
+      "dia": "outputs/dia/758.wav"
+    }
+  },
+  {
+    "key": "795",
+    "transcript_file": "transcripts/795.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/795_spk1.wav",
+      "transcription": "but the rankings can always change."
+    },
+    "spk2": {
+      "audio_file": "refs/795_spk2.wav",
+      "transcription": "It's like hackling, but it's really positive hackling, so."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/795.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/795.wav",
+      "moss_ttsd": "outputs/moss_ttsd/795.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/795.wav",
+      "dia": "outputs/dia/795.wav"
+    }
+  },
+  {
+    "key": "798",
+    "transcript_file": "transcripts/798.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/798_spk1.wav",
+      "transcription": "Be sure to say hello to everyone you meet."
+    },
+    "spk2": {
+      "audio_file": "refs/798_spk2.wav",
+      "transcription": "We never like properly seen so that's like the great thing about tour"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/798.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/798.wav",
+      "moss_ttsd": "outputs/moss_ttsd/798.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/798.wav",
+      "dia": "outputs/dia/798.wav"
+    }
+  },
+  {
+    "key": "951",
+    "transcript_file": "transcripts/951.txt",
+    "reference_source": "less_hard_examples",
+    "spk1": {
+      "audio_file": "refs/951_spk1.wav",
+      "transcription": "He made me buy my own food at the movie theater."
+    },
+    "spk2": {
+      "audio_file": "refs/951_spk2.wav",
+      "transcription": "The Seaforth is a sub-thousand-dollar watch, comfortably. Some may be changing hands for more than that in the secondary market, but new, well..."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/951.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/951.wav",
+      "moss_ttsd": "outputs/moss_ttsd/951.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/951.wav",
+      "dia": "outputs/dia/951.wav"
+    }
+  }
+]
