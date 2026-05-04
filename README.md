@@ -1,121 +1,108 @@
-# Audio Generation Human Evaluation
+# DialogueDirector — Human Evaluation
 
-A static, GitHub-Pages-friendly listening-test page modeled on
-[`majoroth/salmon_human_eval`](https://majoroth.github.io/salmon_human_eval/),
-adapted to show **4 audio samples per question**: two references and two
-generated samples (a and b) the listener has to choose between.
+A static, GitHub-Pages-friendly listening test for comparing **our
+dialogue-TTS model against four competitors** on the
+[`human_eval20`](./human_eval20) sample set.
+
+Live: https://nanigoldring.github.io/DialogueDirector/
+
+## How it works
+
+Each session is a one-sample-per-page wizard:
+
+1. **Intro page** — instructions and a "Begin" button.
+2. **Sample pages** — one at a time, each showing four clips:
+   - **Reference — Speaker 1** (real recording of speaker 1)
+   - **Reference — Speaker 2** (real recording of speaker 2)
+   - **Generated (a)** and **Generated (b)** — the same dialogue rendered
+     by two different TTS systems. One is always *ours*; the other is one
+     of the four competitors. Their order is randomized per question so
+     listeners can't tell which is which.
+
+   The listener picks `(a) is better`, `(b) is better`, or `About the same`,
+   then clicks **Next sample →**. **Quit and submit** ends early.
+
+3. **Done page** — submits all answered questions in one POST.
+
+A progress bar shows `Sample X of 10 · Y completed`. The default target
+is 10 samples; that's set by `SAMPLES_PER_SESSION` in `samples.js`.
+
+### Opponent rotation
+
+The 4 competitors are `zipvoice_dialog`, `moss_ttsd`, `vibevoice_7b`, and
+`dia` (defined in `samples.js`). For each session we shuffle that list
+and round-robin through it as we walk the per-session sample subset, so
+10 questions split as 3+3+2+2 across competitors — close to balanced
+without making the rotation predictable.
 
 ## File layout
 
 ```
-salmon_eval_poll/
-├── index.html      # main page (intro + form)
-├── style.css       # styling
-├── samples.js      # YOU EDIT THIS — list of questions / audio paths
-├── script.js       # rendering + submission logic
-└── audio/
-    ├── sample_01/
-    │   ├── ref1.wav
-    │   ├── ref2.wav
-    │   ├── gen_a.wav
-    │   └── gen_b.wav
-    ├── sample_02/
-    └── …
+.
+├── index.html         # 3-view SPA: intro / sample / done
+├── style.css
+├── script.js          # wizard logic + opponent rotation + submit
+├── samples.js         # auto-generated from human_eval20/manifest.json
+├── apps_script.gs     # Google Apps Script backend for the response sheet
+└── human_eval20/
+    ├── manifest.json
+    ├── refs/<key>_spk{1,2}.{flac,wav}
+    ├── outputs/
+    │   ├── ours_abs_10k/<key>.wav        # ours
+    │   ├── zipvoice_dialog/<key>.wav
+    │   ├── moss_ttsd/<key>.wav
+    │   ├── vibevoice_7b/<key>.wav
+    │   └── dia/<key>.wav
+    └── transcripts/<key>.txt
 ```
 
-## Adding your samples
+`samples.js` references files under `human_eval20/` directly — no copying
+or symlinking. To swap in a different evaluation set, regenerate
+`samples.js` so each entry has `reference1`, `reference2`, `ours`, and a
+`competitors: { name: path }` map.
 
-1. Drop your `.wav` / `.mp3` files into `audio/<sample_id>/`. Any folder
-   structure works — only the paths in `samples.js` matter.
-2. Open `samples.js` and add one entry per question:
+## Submission
 
-   ```js
-   {
-     id: "sample_07",
-     reference1: "audio/sample_07/ref1.wav",
-     reference2: "audio/sample_07/ref2.wav",
-     generated_a: "audio/sample_07/model_X.wav",
-     generated_b: "audio/sample_07/model_Y.wav",
-   },
-   ```
+`window.SUBMIT_URL` in `samples.js` controls the destination:
 
-3. (Optional) Edit `QUESTION_TEXT` to change the prompt shown under each
-   sample.
+- **Empty string** → the browser downloads a JSON file with the
+  responses; listeners email it back.
+- **Google Apps Script Web App URL** (current default) → POSTs the JSON
+  to a Google Sheet via the script in `apps_script.gs`.
 
-4. `RANDOMIZE_AB = true` shuffles which generated clip appears as (a) vs
-   (b) per session, so listeners can't tell which model is which. The
-   submitted payload always records the *original* identity from
-   `samples.js`, plus a flag indicating whether the UI was swapped.
+### Payload
 
-## Collecting responses
-
-`SUBMIT_URL` in `samples.js` controls what happens on submit:
-
-- **Empty string** (default): the page generates a JSON file and triggers
-  a download — listeners email it back to you. Zero infrastructure.
-- **Google Apps Script Web App URL**: POSTs the JSON to a Google Sheet.
-  See "Sheet backend" below.
-- **Any custom HTTPS endpoint**: receives a JSON POST with the schema
-  shown in the next section.
-
-### Submission payload
-
-```json
+```jsonc
 {
-  "name": "Jane Doe",
-  "email": "jane@example.com",
-  "submitted_at": "2026-05-03T09:30:00.000Z",
-  "user_agent": "Mozilla/5.0 …",
+  "respondent_id": "r_abc12345",          // anonymous, per-session
+  "submitted_at": "2026-05-04T13:41:55.000Z",
+  "user_agent": "...",
   "responses": [
     {
-      "sample_id": "sample_01",
+      "sample_id": "032",
       "index": 0,
-      "choice": "a",                 // "a" | "b" | "tie"
-      "ab_was_swapped_in_ui": false  // true => UI showed gen_b as (a)
+      "opponent": "moss_ttsd",            // which competitor "ours" faced
+      "ours_side": "a",                   // "a" or "b" — which slot held ours
+      "choice": "a",                      // raw user pick: "a" | "b" | "tie"
+      "winner": "ours"                    // derived: "ours" | "opponent" | "tie"
     }
   ]
 }
 ```
 
-### Sheet backend (optional)
+### Sheet backend
 
-1. Create a Google Sheet, then `Extensions → Apps Script`.
-2. Paste the snippet below, deploy as a Web App with
-   "Execute as: me" and "Who has access: Anyone".
-3. Copy the deployment URL into `SUBMIT_URL` in `samples.js`.
+`apps_script.gs` is the script bound to the response Google Sheet.
+Headers it writes per row:
 
-```js
-function doPost(e) {
-  const data = JSON.parse(e.postData.contents);
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  data.responses.forEach(r => {
-    sheet.appendRow([
-      data.submitted_at,
-      data.name,
-      data.email,
-      r.sample_id,
-      r.choice,
-      r.ab_was_swapped_in_ui,
-    ]);
-  });
-  return ContentService.createTextOutput(JSON.stringify({ ok: true }))
-    .setMimeType(ContentService.MimeType.JSON);
-}
+```
+submitted_at | respondent_id | sample_id | opponent | winner |
+choice       | ours_side     | question_index       | user_agent
 ```
 
-## Hosting on GitHub Pages
-
-```bash
-git init
-git add .
-git commit -m "Initial listening test"
-git branch -M main
-git remote add origin git@github.com:<you>/<repo>.git
-git push -u origin main
-```
-
-In the repo settings → Pages, set the source to `main` / `/ (root)`.
-Your test will be live at `https://<you>.github.io/<repo>/`.
+Setup is documented inline at the top of `apps_script.gs`. After editing,
+re-deploy via *Manage deployments → pencil → New version* so the existing
+`SUBMIT_URL` keeps working.
 
 ## Local preview
 
@@ -123,5 +110,15 @@ Your test will be live at `https://<you>.github.io/<repo>/`.
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
-(Browsers won't load `<audio src="audio/...">` from a `file://` URL, so a
-local server is required for testing.)
+
+Browsers refuse `<audio src=...>` over `file://`, so a local HTTP server
+is required for testing.
+
+## Hosting on GitHub Pages
+
+This repo is set up to serve from `main` / root. After pushing, the site
+rebuilds automatically at the URL above.
+
+The script tags in `index.html` use a `?v=N` cache-buster — bump it when
+shipping a change that listeners with the old version cached should pick
+up immediately.
