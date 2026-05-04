@@ -64,6 +64,7 @@
   const opponents = assignOpponents(samples);
   const swapFlags = samples.map(() => (randomize ? Math.random() < 0.5 : false));
   const responses = [];
+  const submitPromises = [];
   let currentIdx = 0;
 
   progTotal.textContent = String(samples.length);
@@ -82,6 +83,7 @@
     }
     sampleError.classList.add("hidden");
     responses.push(r);
+    submitResponse(r);
     if (currentIdx + 1 >= samples.length) {
       finish();
     } else {
@@ -93,7 +95,10 @@
 
   quitBtn.addEventListener("click", () => {
     const r = collectCurrentResponse();
-    if (r) responses.push(r);
+    if (r) {
+      responses.push(r);
+      submitResponse(r);
+    }
     finish();
   });
 
@@ -167,6 +172,8 @@
     const swap = swapFlags[currentIdx];
     const oursSide = swap ? "b" : "a";
     const opponent = opponents[currentIdx];
+    const modelA = oursSide === "a" ? oursName : opponent;
+    const modelB = oursSide === "b" ? oursName : opponent;
     const winner =
       chosen === "tie" ? "tie" : (chosen === oursSide ? "ours" : "opponent");
     const chosenModel =
@@ -176,10 +183,101 @@
       index: currentIdx,
       opponent: opponent,
       ours_side: oursSide,
+      model_a: modelA,
+      model_b: modelB,
       choice: chosen,
       winner: winner,
       chosen_model: chosenModel,
     };
+  }
+
+  function submitResponse(r) {
+    if (!submitUrl) {
+      r._sent = false;
+      return Promise.resolve();
+    }
+    const payload = {
+      respondent_id: respondentId,
+      submitted_at: new Date().toISOString(),
+      user_agent: navigator.userAgent,
+      responses: [{
+        sample_id: r.sample_id,
+        index: r.index,
+        opponent: r.opponent,
+        ours_side: r.ours_side,
+        model_a: r.model_a,
+        model_b: r.model_b,
+        choice: r.choice,
+        winner: r.winner,
+        chosen_model: r.chosen_model,
+      }],
+    };
+    const p = (async () => {
+      try {
+        const res = await fetch(submitUrl, {
+          method: "POST",
+          mode: "cors",
+          redirect: "follow",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error("Server returned " + res.status);
+        r._sent = true;
+      } catch (err) {
+        console.error(err);
+        r._sent = false;
+      }
+    })();
+    submitPromises.push(p);
+    return p;
+  }
+
+  async function retryUnsent(unsent) {
+    const payload = {
+      respondent_id: respondentId,
+      submitted_at: new Date().toISOString(),
+      user_agent: navigator.userAgent,
+      responses: unsent.map(r => ({
+        sample_id: r.sample_id,
+        index: r.index,
+        opponent: r.opponent,
+        ours_side: r.ours_side,
+        model_a: r.model_a,
+        model_b: r.model_b,
+        choice: r.choice,
+        winner: r.winner,
+        chosen_model: r.chosen_model,
+      })),
+    };
+    const res = await fetch(submitUrl, {
+      method: "POST",
+      mode: "cors",
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error("Server returned " + res.status);
+    unsent.forEach(r => { r._sent = true; });
+  }
+
+  function downloadResponses() {
+    const payload = {
+      respondent_id: respondentId,
+      submitted_at: new Date().toISOString(),
+      user_agent: navigator.userAgent,
+      responses,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "eval_" + respondentId + "_" + Date.now() + ".json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
   }
 
   async function finish() {
@@ -192,47 +290,36 @@
       return;
     }
 
-    const payload = {
-      respondent_id: respondentId,
-      submitted_at: new Date().toISOString(),
-      user_agent: navigator.userAgent,
-      responses,
-    };
-
-    try {
-      if (submitUrl) {
-        const res = await fetch(submitUrl, {
-          method: "POST",
-          mode: "cors",
-          redirect: "follow",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error("Server returned " + res.status);
-        const n = responses.length;
-        doneMessage.textContent =
-          "Recorded your " + n + " response" + (n === 1 ? "" : "s") +
-          ". Thanks for listening!";
-      } else {
-        const blob = new Blob([JSON.stringify(payload, null, 2)], {
-          type: "application/json",
-        });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "eval_" + respondentId + "_" + Date.now() + ".json";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-        doneMessage.textContent =
-          "Downloaded your " + responses.length +
-          " responses — please send the JSON to the organizer.";
-      }
-    } catch (err) {
-      console.error(err);
+    if (!submitUrl) {
+      downloadResponses();
       doneMessage.textContent =
-        "Could not submit (" + err.message + "). Please contact the organizer.";
+        "Downloaded your " + responses.length +
+        " responses — please send the JSON to the organizer.";
+      return;
+    }
+
+    doneMessage.textContent = "Saving your responses…";
+    await Promise.all(submitPromises);
+
+    const unsent = responses.filter(r => !r._sent);
+    if (unsent.length > 0) {
+      try {
+        await retryUnsent(unsent);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    const sent = responses.filter(r => r._sent).length;
+    const failed = responses.length - sent;
+    if (failed === 0) {
+      doneMessage.textContent =
+        "Recorded your " + sent + " response" + (sent === 1 ? "" : "s") +
+        ". Thanks for listening!";
+    } else {
+      doneMessage.textContent =
+        "Saved " + sent + " of " + responses.length +
+        " responses; " + failed + " could not be submitted. Please contact the organizer.";
     }
   }
 })();

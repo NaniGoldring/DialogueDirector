@@ -30,9 +30,11 @@ const HEADERS = [
   "respondent_id",     // anonymous per-session ID — groups all rows from one listener
   "sample_id",         // which dialogue (key from human_eval20/manifest.json)
   "chosen_model",      // model name the listener picked, or "tie"
+  "choice",            // "a" | "b" | "tie"  — which UI clip the listener picked
+  "model_a",           // model that produced the (a) clip on this question
+  "model_b",           // model that produced the (b) clip on this question
   "opponent",          // which competitor model "ours" was paired against this question
   "winner",            // "ours" | "opponent" | "tie"
-  "choice",            // "a" | "b" | "tie"  — raw user pick (UI side)
   "ours_side",         // "a" | "b"  — which UI side held the "ours" clip
   "question_index",
   "user_agent",
@@ -57,9 +59,11 @@ function doPost(e) {
       data.respondent_id || "",
       r.sample_id || "",
       r.chosen_model || "",
+      r.choice || "",
+      r.model_a || "",
+      r.model_b || "",
       r.opponent || "",
       r.winner || "",
-      r.choice || "",
       r.ours_side || "",
       r.index === undefined ? "" : r.index,
       data.user_agent || "",
