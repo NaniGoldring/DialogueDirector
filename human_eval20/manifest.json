@@ -378,5 +378,105 @@
       "vibevoice_7b": "outputs/vibevoice_7b/951.wav",
       "dia": "outputs/dia/951.wav"
     }
+  },
+  {
+    "key": "053",
+    "transcript_file": "transcripts/053.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/053_spk1.wav",
+      "transcription": "and that's great. Sometimes all awa-"
+    },
+    "spk2": {
+      "audio_file": "refs/053_spk2.wav",
+      "transcription": "They've all been either just like great or really great."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/053.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/053.wav",
+      "moss_ttsd": "outputs/moss_ttsd/053.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/053.wav",
+      "dia": "outputs/dia/053.wav"
+    }
+  },
+  {
+    "key": "163",
+    "transcript_file": "transcripts/163.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/163_spk1.wav",
+      "transcription": "in Brownstone, Brooklyn, overlooking all the brownstone."
+    },
+    "spk2": {
+      "audio_file": "refs/163_spk2.wav",
+      "transcription": "and I just I couldn't resist this composition and sometimes it's you know different colors and different seasons and different times of day that really can spark you know new ideas and and really kind of just get you to where you want it to be and I think that's kind of what I got with this image."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/163.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/163.wav",
+      "moss_ttsd": "outputs/moss_ttsd/163.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/163.wav",
+      "dia": "outputs/dia/163.wav"
+    }
+  },
+  {
+    "key": "358",
+    "transcript_file": "transcripts/358.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/358_spk1.wav",
+      "transcription": "The last thing I did was come back with a beat of caulking all along."
+    },
+    "spk2": {
+      "audio_file": "refs/358_spk2.wav",
+      "transcription": "Dave is a great photographer and an even greater person. If you've ever had the..."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/358.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/358.wav",
+      "moss_ttsd": "outputs/moss_ttsd/358.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/358.wav",
+      "dia": "outputs/dia/358.wav"
+    }
+  },
+  {
+    "key": "762",
+    "transcript_file": "transcripts/762.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/762_spk1.wav",
+      "transcription": "The very first words out of her mouth was, you honestly wore that? And I was like, this is gonna go fucking awesome."
+    },
+    "spk2": {
+      "audio_file": "refs/762_spk2.wav",
+      "transcription": "He dissed my favorite radio station and said it was the worst ever."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/762.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/762.wav",
+      "moss_ttsd": "outputs/moss_ttsd/762.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/762.wav",
+      "dia": "outputs/dia/762.wav"
+    }
+  },
+  {
+    "key": "855",
+    "transcript_file": "transcripts/855.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/855_spk1.wav",
+      "transcription": "All I do is stare."
+    },
+    "spk2": {
+      "audio_file": "refs/855_spk2.wav",
+      "transcription": "but he's not gonna win it."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/855.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/855.wav",
+      "moss_ttsd": "outputs/moss_ttsd/855.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/855.wav",
+      "dia": "outputs/dia/855.wav"
+    }
   }
 ]

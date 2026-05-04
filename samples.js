@@ -237,6 +237,66 @@ window.SAMPLES = [
       dia:             "human_eval20/outputs/dia/951.wav",
     },
   },
+  {
+    id: "053",
+    reference1: "human_eval20/refs/053_spk1.wav",
+    reference2: "human_eval20/refs/053_spk2.wav",
+    ours: "human_eval20/outputs/ours_abs_10k/053.wav",
+    competitors: {
+      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/053.wav",
+      moss_ttsd:       "human_eval20/outputs/moss_ttsd/053.wav",
+      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/053.wav",
+      dia:             "human_eval20/outputs/dia/053.wav",
+    },
+  },
+  {
+    id: "163",
+    reference1: "human_eval20/refs/163_spk1.wav",
+    reference2: "human_eval20/refs/163_spk2.wav",
+    ours: "human_eval20/outputs/ours_abs_10k/163.wav",
+    competitors: {
+      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/163.wav",
+      moss_ttsd:       "human_eval20/outputs/moss_ttsd/163.wav",
+      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/163.wav",
+      dia:             "human_eval20/outputs/dia/163.wav",
+    },
+  },
+  {
+    id: "358",
+    reference1: "human_eval20/refs/358_spk1.wav",
+    reference2: "human_eval20/refs/358_spk2.wav",
+    ours: "human_eval20/outputs/ours_abs_10k/358.wav",
+    competitors: {
+      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/358.wav",
+      moss_ttsd:       "human_eval20/outputs/moss_ttsd/358.wav",
+      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/358.wav",
+      dia:             "human_eval20/outputs/dia/358.wav",
+    },
+  },
+  {
+    id: "762",
+    reference1: "human_eval20/refs/762_spk1.wav",
+    reference2: "human_eval20/refs/762_spk2.wav",
+    ours: "human_eval20/outputs/ours_abs_10k/762.wav",
+    competitors: {
+      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/762.wav",
+      moss_ttsd:       "human_eval20/outputs/moss_ttsd/762.wav",
+      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/762.wav",
+      dia:             "human_eval20/outputs/dia/762.wav",
+    },
+  },
+  {
+    id: "855",
+    reference1: "human_eval20/refs/855_spk1.wav",
+    reference2: "human_eval20/refs/855_spk2.wav",
+    ours: "human_eval20/outputs/ours_abs_10k/855.wav",
+    competitors: {
+      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/855.wav",
+      moss_ttsd:       "human_eval20/outputs/moss_ttsd/855.wav",
+      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/855.wav",
+      dia:             "human_eval20/outputs/dia/855.wav",
+    },
+  },
 ];
 
 // Display name for "ours" — used when logging the chosen model per response.
