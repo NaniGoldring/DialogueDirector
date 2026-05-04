@@ -320,26 +320,6 @@
     }
   },
   {
-    "key": "758",
-    "transcript_file": "transcripts/758.txt",
-    "reference_source": "less_hard_examples",
-    "spk1": {
-      "audio_file": "refs/758_spk1.wav",
-      "transcription": "Don't be so hard on yourself, Peter. Getting babies to sleep isn't really a big brothery thing. It's more of a big sistery thing. Just stick to raiding vegetable patches."
-    },
-    "spk2": {
-      "audio_file": "refs/758_spk2.wav",
-      "transcription": "You didn't understand my sensation I'm feeling love in music long before when you"
-    },
-    "outputs": {
-      "ours_abs_10k": "outputs/ours_abs_10k/758.wav",
-      "zipvoice_dialog": "outputs/zipvoice_dialog/758.wav",
-      "moss_ttsd": "outputs/moss_ttsd/758.wav",
-      "vibevoice_7b": "outputs/vibevoice_7b/758.wav",
-      "dia": "outputs/dia/758.wav"
-    }
-  },
-  {
     "key": "795",
     "transcript_file": "transcripts/795.txt",
     "reference_source": "less_hard_examples",

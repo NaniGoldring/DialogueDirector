@@ -202,18 +202,6 @@ window.SAMPLES = [
     },
   },
   {
-    id: "758",
-    reference1: "human_eval20/refs/758_spk1.wav",
-    reference2: "human_eval20/refs/758_spk2.wav",
-    ours: "human_eval20/outputs/ours_abs_10k/758.wav",
-    competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/758.wav",
-      moss_ttsd:       "human_eval20/outputs/moss_ttsd/758.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/758.wav",
-      dia:             "human_eval20/outputs/dia/758.wav",
-    },
-  },
-  {
     id: "795",
     reference1: "human_eval20/refs/795_spk1.wav",
     reference2: "human_eval20/refs/795_spk2.wav",
