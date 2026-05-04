@@ -259,7 +259,7 @@ window.RANDOMIZE_AB = true;
 
 // How many questions to show per session. Set to 0 to show all 20.
 // Round-robin assigns opponents from the 4 competitors as evenly as possible.
-window.SAMPLES_PER_SESSION = 7;
+window.SAMPLES_PER_SESSION = 10;
 
 // Empty -> downloads JSON locally; set to a Google Apps Script Web App URL to POST.
 window.SUBMIT_URL = "https://script.google.com/macros/s/AKfycbyao7odb7iba1fSInyyuXw17jDwMgpPtAK8I52lt8CT61BERiZxu8UfoZDhPBlZp16pvQ/exec";

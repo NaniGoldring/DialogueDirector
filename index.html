@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Human Evaluation &mdash; DialogueDirector</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <main class="container">
     <header>
       <h1>Human Evaluation &mdash; DialogueDirector 🗣️💬</h1>
+    </header>
 
+    <section id="intro-view">
       <h2 class="section-title">Instructions</h2>
       <p class="intro">
         Thank you for participating in this listening test. For each sample
@@ -21,35 +23,53 @@
         by a different text-to-speech system from the same script.
       </p>
       <p class="intro">
-        For each sample, pick the generated dialogue that sounds
+        Pick the generated dialogue that sounds
         <strong>more natural and faithful to the reference speakers</strong>
         &mdash; considering voice similarity, prosody, intelligibility, and
         the absence of artifacts or hallucinated content. If the two are
         truly comparable, choose &ldquo;About the same&rdquo;.
       </p>
       <p class="intro">
-        Please use headphones in a quiet environment, listen to all four
-        clips for each sample, and answer every question before submitting.
+        We&rsquo;d love it if you can listen to <strong>10 samples</strong>,
+        but you can quit at any time. Please use headphones in a quiet
+        environment and listen to all four clips for each sample before
+        answering.
       </p>
-    </header>
-
-    <form id="poll-form">
-      <section id="samples"></section>
-
-      <div class="submit-row">
-        <p class="hint">Make sure you filled all questions.</p>
-        <button type="submit" id="submit-btn">Submit responses</button>
+      <div class="cta-row">
+        <button type="button" id="begin-btn">Begin &rarr;</button>
       </div>
-    </form>
+    </section>
 
-    <div id="result" class="result hidden"></div>
+    <section id="sample-view" class="hidden">
+      <div class="progress">
+        <div class="progress-text">
+          Sample <span id="prog-current">1</span> of <span id="prog-total">10</span>
+          &middot; <span id="prog-completed">0</span> completed
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+      </div>
+
+      <div id="sample-container"></div>
+
+      <p id="sample-error" class="hint error hidden">Please choose an option before continuing.</p>
+
+      <div class="button-row">
+        <button type="button" id="quit-btn" class="btn-secondary">Quit and submit</button>
+        <button type="button" id="next-btn">Next sample &rarr;</button>
+      </div>
+    </section>
+
+    <section id="done-view" class="hidden">
+      <h2 class="section-title">Thank you!</h2>
+      <p class="intro" id="done-message"></p>
+    </section>
 
     <footer>
       <p>&copy; Lightricks &mdash; Listening Test</p>
     </footer>
   </main>
 
-  <script src="samples.js?v=2"></script>
-  <script src="script.js?v=2"></script>
+  <script src="samples.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
