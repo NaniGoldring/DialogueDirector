@@ -16,32 +16,23 @@
     <section id="intro-view">
       <h2 class="section-title">Instructions</h2>
       <p class="intro">
-        Thank you for participating in this listening test. For each sample
-        you will hear two <strong>reference recordings</strong> &mdash; one
-        per speaker &mdash; followed by two <strong>generated dialogues</strong>
-        labeled <strong>(a)</strong> and <strong>(b)</strong>, each produced
-        by a different text-to-speech system from the same script.
+        For each sample you&rsquo;ll hear two <strong>reference recordings</strong>
+        (one per speaker), then two <strong>generated dialogues</strong>
+        labeled <strong>(a)</strong> and <strong>(b)</strong> from different
+        TTS systems.
       </p>
       <p class="intro">
-        Heads up: the references are <strong>real-world recordings</strong> and
-        often contain <strong>background noise, room sound, or other
-        environmental artifacts</strong>. Please <strong>ignore the
-        background</strong> and judge only the
-        <strong>speakers&rsquo; voices</strong> &mdash; pitch, timbre, accent,
-        and speaking style. A good generated dialogue should sound like the
-        <em>same two speakers</em> in clean studio conditions; it does
-        <strong>not</strong> need to reproduce the noise or environment.
+        The references are real-world recordings with
+        <strong>background noise</strong>. Ignore the background and judge
+        only the <strong>speakers&rsquo; voices</strong> (pitch, timbre,
+        accent, style) &mdash; the generated dialogue should sound like the
+        same two speakers in clean studio conditions, not reproduce the noise.
       </p>
       <p class="intro">
-        Pick the generated dialogue whose voices are
-        <strong>closer to the reference speakers</strong>. If the two are
-        truly comparable, choose &ldquo;About the same&rdquo;.
-      </p>
-      <p class="intro">
-        We&rsquo;d love it if you can listen to <strong>10 samples</strong>,
-        but you can quit at any time. Please use headphones in a quiet
-        environment and listen to all four clips for each sample before
-        answering.
+        Pick the dialogue whose voices are <strong>closer to the
+        references</strong>, or choose &ldquo;About the same&rdquo;. Please
+        use headphones and try to do all <strong>15 samples</strong>; you
+        can quit at any time.
       </p>
       <div class="cta-row">
         <button type="button" id="begin-btn">Begin &rarr;</button>
@@ -51,7 +42,7 @@
     <section id="sample-view" class="hidden">
       <div class="progress">
         <div class="progress-text">
-          Sample <span id="prog-current">1</span> of <span id="prog-total">10</span>
+          Sample <span id="prog-current">1</span> of <span id="prog-total">15</span>
           &middot; <span id="prog-completed">0</span> completed
         </div>
         <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
@@ -72,12 +63,9 @@
       <p class="intro" id="done-message"></p>
     </section>
 
-    <footer>
-      <p>&copy; Lightricks &mdash; Listening Test</p>
-    </footer>
   </main>
 
-  <script src="samples.js?v=7"></script>
+  <script src="samples.js?v=8"></script>
   <script src="script.js?v=6"></script>
 </body>
 </html>
