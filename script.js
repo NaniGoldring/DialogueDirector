@@ -26,6 +26,7 @@
   const randomize = !!window.RANDOMIZE_AB;
   const submitUrl = window.SUBMIT_URL || "";
   const perSession = Number(window.SAMPLES_PER_SESSION) || 0;
+  const oursName = window.OURS_NAME || "ours";
 
   function shuffle(arr) {
     const copy = arr.slice();
@@ -165,13 +166,19 @@
     if (!chosen) return null;
     const swap = swapFlags[currentIdx];
     const oursSide = swap ? "b" : "a";
+    const opponent = opponents[currentIdx];
+    const winner =
+      chosen === "tie" ? "tie" : (chosen === oursSide ? "ours" : "opponent");
+    const chosenModel =
+      winner === "tie" ? "tie" : (winner === "ours" ? oursName : opponent);
     return {
       sample_id: samples[currentIdx].id,
       index: currentIdx,
-      opponent: opponents[currentIdx],
+      opponent: opponent,
       ours_side: oursSide,
       choice: chosen,
-      winner: chosen === "tie" ? "tie" : (chosen === oursSide ? "ours" : "opponent"),
+      winner: winner,
+      chosen_model: chosenModel,
     };
   }
 

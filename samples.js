@@ -251,6 +251,9 @@ window.SAMPLES = [
   },
 ];
 
+// Display name for "ours" — used when logging the chosen model per response.
+window.OURS_NAME = "ours_abs_10k";
+
 window.QUESTION_TEXT = "Which generated dialogue sounds more natural and faithful to the reference speakers?";
 
 // Randomize whether `ours` shows as (a) or (b) per question. Original identity

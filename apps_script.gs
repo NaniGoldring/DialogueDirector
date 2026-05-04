@@ -28,9 +28,10 @@
 const HEADERS = [
   "submitted_at",
   "respondent_id",     // anonymous per-session ID — groups all rows from one listener
-  "sample_id",
+  "sample_id",         // which dialogue (key from human_eval20/manifest.json)
+  "chosen_model",      // model name the listener picked, or "tie"
   "opponent",          // which competitor model "ours" was paired against this question
-  "winner",            // "ours" | "opponent" | "tie"  — derived from choice + ours_side
+  "winner",            // "ours" | "opponent" | "tie"
   "choice",            // "a" | "b" | "tie"  — raw user pick (UI side)
   "ours_side",         // "a" | "b"  — which UI side held the "ours" clip
   "question_index",
@@ -55,6 +56,7 @@ function doPost(e) {
       data.submitted_at || new Date().toISOString(),
       data.respondent_id || "",
       r.sample_id || "",
+      r.chosen_model || "",
       r.opponent || "",
       r.winner || "",
       r.choice || "",

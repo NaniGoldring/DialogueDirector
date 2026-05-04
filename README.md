@@ -84,7 +84,8 @@ or symlinking. To swap in a different evaluation set, regenerate
       "opponent": "moss_ttsd",            // which competitor "ours" faced
       "ours_side": "a",                   // "a" or "b" — which slot held ours
       "choice": "a",                      // raw user pick: "a" | "b" | "tie"
-      "winner": "ours"                    // derived: "ours" | "opponent" | "tie"
+      "winner": "ours",                   // "ours" | "opponent" | "tie"
+      "chosen_model": "ours_abs_10k"      // actual model picked, or "tie"
     }
   ]
 }
@@ -96,8 +97,9 @@ or symlinking. To swap in a different evaluation set, regenerate
 Headers it writes per row:
 
 ```
-submitted_at | respondent_id | sample_id | opponent | winner |
-choice       | ours_side     | question_index       | user_agent
+submitted_at | respondent_id | sample_id   | chosen_model |
+opponent     | winner        | choice      | ours_side    |
+question_index               | user_agent
 ```
 
 Setup is documented inline at the top of `apps_script.gs`. After editing,
