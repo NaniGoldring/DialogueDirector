@@ -14,26 +14,17 @@
     </header>
 
     <section id="intro-view">
-      <h2 class="section-title">Instructions</h2>
+      <h2 class="section-title">Which Dialogue Sounds Better?</h2>
       <p class="intro">
-        Thank you for participating in this listening test. For each sample
-        you&rsquo;ll hear two <strong>reference recordings</strong>
-        (one per speaker), then two <strong>generated dialogues</strong>
-        labeled <strong>(a)</strong> and <strong>(b)</strong> from different
-        TTS systems.
+        You&rsquo;ll hear recordings of two original speakers (natural
+        recordings with background noise &mdash; ignore the noise). Then
+        you&rsquo;ll hear 2 synthesized versions of a dialogue between
+        them. Pick the version where the voices sound more like the
+        original speakers and the conversation feels more natural.
       </p>
       <p class="intro">
-        The references are real-world recordings with
-        <strong>background noise</strong>. Ignore the background and judge
-        only the <strong>speakers&rsquo; voices</strong> (pitch, timbre,
-        accent, style) &mdash; the generated dialogue should sound like the
-        same two speakers in clean studio conditions, not reproduce the noise.
-      </p>
-      <p class="intro">
-        Pick the dialogue whose voices are <strong>closer to the
-        references</strong>, or choose &ldquo;About the same&rdquo;. Please
-        use headphones and try to do all <strong>15 samples</strong>; you
-        can quit at any time.
+        * Please use headphones. We&rsquo;d appreciate at least 15
+        samples, but the more the better!
       </p>
       <div class="cta-row">
         <button type="button" id="begin-btn">Begin &rarr;</button>
@@ -43,10 +34,8 @@
     <section id="sample-view" class="hidden">
       <div class="progress">
         <div class="progress-text">
-          Sample <span id="prog-current">1</span> of <span id="prog-total">15</span>
-          &middot; <span id="prog-completed">0</span> completed
+          Answered: <span id="prog-completed">0</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
       </div>
 
       <div id="sample-container"></div>
@@ -67,6 +56,6 @@
   </main>
 
   <script src="samples.js?v=8"></script>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

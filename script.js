@@ -6,10 +6,7 @@
   const beginBtn = document.getElementById("begin-btn");
   const nextBtn = document.getElementById("next-btn");
   const quitBtn = document.getElementById("quit-btn");
-  const progCurrent = document.getElementById("prog-current");
-  const progTotal = document.getElementById("prog-total");
   const progCompleted = document.getElementById("prog-completed");
-  const progFill = document.getElementById("prog-fill");
   const sampleError = document.getElementById("sample-error");
   const doneMessage = document.getElementById("done-message");
 
@@ -25,7 +22,6 @@
   const question = window.QUESTION_TEXT || "Which sample do you prefer?";
   const randomize = !!window.RANDOMIZE_AB;
   const submitUrl = window.SUBMIT_URL || "";
-  const perSession = Number(window.SAMPLES_PER_SESSION) || 0;
   const oursName = window.OURS_NAME || "ours";
 
   function shuffle(arr) {
@@ -37,37 +33,36 @@
     return copy;
   }
 
-  function pickSubset(arr, n) {
-    if (!n || n >= arr.length) return shuffle(arr);
-    return shuffle(arr).slice(0, n);
-  }
+  // Infinite sample stream: shuffle the pool, cycle through, reshuffle when empty.
+  // Opponent is round-robin (cycle persists across pool refills) for balanced coverage.
+  let pool = [];
+  let oppCycle = [];
+  const items = []; // {sample, opponent, swap} — grown lazily
 
-  function assignOpponents(samplesList) {
-    const out = [];
-    let cycle = [];
-    for (let i = 0; i < samplesList.length; i++) {
-      const available = Object.keys(samplesList[i].competitors || {});
-      if (available.length === 0) { out.push(null); continue; }
-      if (cycle.length === 0) cycle = shuffle(available);
-      let opp = null;
-      while (cycle.length > 0) {
-        const next = cycle.shift();
-        if (available.indexOf(next) !== -1) { opp = next; break; }
+  function ensureItem(i) {
+    while (items.length <= i) {
+      if (pool.length === 0) pool = shuffle(allSamples.slice());
+      const sample = pool.shift();
+      const available = Object.keys(sample.competitors || {});
+      let opponent = null;
+      if (available.length) {
+        while (oppCycle.length > 0) {
+          const next = oppCycle.shift();
+          if (available.indexOf(next) !== -1) { opponent = next; break; }
+        }
+        if (opponent === null) {
+          oppCycle = shuffle(available);
+          opponent = oppCycle.shift();
+        }
       }
-      if (opp === null) opp = available[Math.floor(Math.random() * available.length)];
-      out.push(opp);
+      const swap = randomize ? Math.random() < 0.5 : false;
+      items.push({ sample, opponent, swap });
     }
-    return out;
   }
 
-  const samples = pickSubset(allSamples, perSession);
-  const opponents = assignOpponents(samples);
-  const swapFlags = samples.map(() => (randomize ? Math.random() < 0.5 : false));
   const responses = [];
   const submitPromises = [];
   let currentIdx = 0;
-
-  progTotal.textContent = String(samples.length);
 
   beginBtn.addEventListener("click", () => {
     introView.classList.add("hidden");
@@ -84,13 +79,9 @@
     sampleError.classList.add("hidden");
     responses.push(r);
     submitResponse(r);
-    if (currentIdx + 1 >= samples.length) {
-      finish();
-    } else {
-      currentIdx++;
-      renderSample(currentIdx);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    currentIdx++;
+    renderSample(currentIdx);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   quitBtn.addEventListener("click", () => {
@@ -103,9 +94,8 @@
   });
 
   function renderSample(i) {
-    const sample = samples[i];
-    const opponent = opponents[i];
-    const swap = swapFlags[i];
+    ensureItem(i);
+    const { sample, opponent, swap } = items[i];
     const oursPath = sample.ours;
     const opponentPath = sample.competitors[opponent];
     const firstClip = swap ? opponentPath : oursPath;
@@ -157,11 +147,8 @@
       </section>
     `;
 
-    progCurrent.textContent = String(i + 1);
     progCompleted.textContent = String(i);
-    const pct = samples.length === 0 ? 0 : (i / samples.length) * 100;
-    progFill.style.width = pct + "%";
-    nextBtn.textContent = (i + 1 === samples.length) ? "Finish" : "Next sample →";
+    nextBtn.textContent = "Next sample →";
   }
 
   function collectCurrentResponse() {
@@ -169,9 +156,10 @@
     let chosen = null;
     for (const r of radios) if (r.checked) { chosen = r.value; break; }
     if (!chosen) return null;
-    const swap = swapFlags[currentIdx];
+    const item = items[currentIdx];
+    const swap = item.swap;
     const oursSide = swap ? "b" : "a";
-    const opponent = opponents[currentIdx];
+    const opponent = item.opponent;
     const modelA = oursSide === "a" ? oursName : opponent;
     const modelB = oursSide === "b" ? oursName : opponent;
     const winner =
@@ -179,7 +167,7 @@
     const chosenModel =
       winner === "tie" ? "tie" : (winner === "ours" ? oursName : opponent);
     return {
-      sample_id: samples[currentIdx].id,
+      sample_id: item.sample.id,
       index: currentIdx,
       opponent: opponent,
       ours_side: oursSide,
@@ -283,7 +271,6 @@
   async function finish() {
     sampleView.classList.add("hidden");
     doneView.classList.remove("hidden");
-    progFill.style.width = "100%";
 
     if (responses.length === 0) {
       doneMessage.textContent = "No responses to submit. Thanks for stopping by!";
