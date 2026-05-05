@@ -478,5 +478,205 @@
       "vibevoice_7b": "outputs/vibevoice_7b/855.wav",
       "dia": "outputs/dia/855.wav"
     }
+  },
+  {
+    "key": "179",
+    "transcript_file": "transcripts/179.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/179_spk1.wav",
+      "transcription": "He dissed my favorite radio station and said it was the worst ever."
+    },
+    "spk2": {
+      "audio_file": "refs/179_spk2.wav",
+      "transcription": "They've all been either just like great or really great."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/179.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/179.wav",
+      "moss_ttsd": "outputs/moss_ttsd/179.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/179.wav",
+      "dia": "outputs/dia/179.wav"
+    }
+  },
+  {
+    "key": "298",
+    "transcript_file": "transcripts/298.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/298_spk1.wav",
+      "transcription": "The Seaforth is a sub-thousand-dollar watch, comfortably. Some may be changing hands for more than that in the secondary market, but new, well..."
+    },
+    "spk2": {
+      "audio_file": "refs/298_spk2.wav",
+      "transcription": "the E string, so it's sort of the root of whatever chord you're going to be in in that position."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/298.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/298.wav",
+      "moss_ttsd": "outputs/moss_ttsd/298.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/298.wav",
+      "dia": "outputs/dia/298.wav"
+    }
+  },
+  {
+    "key": "159",
+    "transcript_file": "transcripts/159.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/159_spk1.wav",
+      "transcription": "It's about safety, control, feedback, and ultimately the most important thing at a race."
+    },
+    "spk2": {
+      "audio_file": "refs/159_spk2.wav",
+      "transcription": "He made me buy my own food at the movie theater."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/159.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/159.wav",
+      "moss_ttsd": "outputs/moss_ttsd/159.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/159.wav",
+      "dia": "outputs/dia/159.wav"
+    }
+  },
+  {
+    "key": "685",
+    "transcript_file": "transcripts/685.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/685_spk1.wav",
+      "transcription": "but he's not gonna win it."
+    },
+    "spk2": {
+      "audio_file": "refs/685_spk2.wav",
+      "transcription": "Be sure to say hello to everyone you meet."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/685.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/685.wav",
+      "moss_ttsd": "outputs/moss_ttsd/685.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/685.wav",
+      "dia": "outputs/dia/685.wav"
+    }
+  },
+  {
+    "key": "828",
+    "transcript_file": "transcripts/828.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/828_spk1.wav",
+      "transcription": "The auditorium is a prime example of that. The auditorium was renovated in the late 1990s."
+    },
+    "spk2": {
+      "audio_file": "refs/828_spk2.wav",
+      "transcription": "We never like properly seen so that's like the great thing about tour"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/828.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/828.wav",
+      "moss_ttsd": "outputs/moss_ttsd/828.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/828.wav",
+      "dia": "outputs/dia/828.wav"
+    }
+  },
+  {
+    "key": "013",
+    "transcript_file": "transcripts/013.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/013_spk1.wav",
+      "transcription": "Before we actually started touring here, I had never been to America."
+    },
+    "spk2": {
+      "audio_file": "refs/013_spk2.wav",
+      "transcription": "All I do is stare."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/013.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/013.wav",
+      "moss_ttsd": "outputs/moss_ttsd/013.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/013.wav",
+      "dia": "outputs/dia/013.wav"
+    }
+  },
+  {
+    "key": "406",
+    "transcript_file": "transcripts/406.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/406_spk1.wav",
+      "transcription": ""
+    },
+    "spk2": {
+      "audio_file": "refs/406_spk2.wav",
+      "transcription": "Jamie, I think this one's gonna win your heart. You got it?"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/406.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/406.wav",
+      "moss_ttsd": "outputs/moss_ttsd/406.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/406.wav",
+      "dia": "outputs/dia/406.wav"
+    }
+  },
+  {
+    "key": "215",
+    "transcript_file": "transcripts/215.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/215_spk1.wav",
+      "transcription": "Dave is a great photographer and an even greater person. If you've ever had the..."
+    },
+    "spk2": {
+      "audio_file": "refs/215_spk2.wav",
+      "transcription": "a tough guy. Fighting at a high level in a"
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/215.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/215.wav",
+      "moss_ttsd": "outputs/moss_ttsd/215.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/215.wav",
+      "dia": "outputs/dia/215.wav"
+    }
+  },
+  {
+    "key": "064",
+    "transcript_file": "transcripts/064.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/064_spk1.wav",
+      "transcription": "You can slide it around you can pretty much do"
+    },
+    "spk2": {
+      "audio_file": "refs/064_spk2.wav",
+      "transcription": "The very first words out of her mouth was, you honestly wore that? And I was like, this is gonna go fucking awesome."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/064.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/064.wav",
+      "moss_ttsd": "outputs/moss_ttsd/064.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/064.wav",
+      "dia": "outputs/dia/064.wav"
+    }
+  },
+  {
+    "key": "505",
+    "transcript_file": "transcripts/505.txt",
+    "reference_source": "less_hard_examples (in-the-wild)",
+    "spk1": {
+      "audio_file": "refs/505_spk1.wav",
+      "transcription": "in Brownstone, Brooklyn, overlooking all the brownstone."
+    },
+    "spk2": {
+      "audio_file": "refs/505_spk2.wav",
+      "transcription": "The last thing I did was come back with a beat of caulking all along."
+    },
+    "outputs": {
+      "ours_abs_10k": "outputs/ours_abs_10k/505.wav",
+      "zipvoice_dialog": "outputs/zipvoice_dialog/505.wav",
+      "moss_ttsd": "outputs/moss_ttsd/505.wav",
+      "vibevoice_7b": "outputs/vibevoice_7b/505.wav",
+      "dia": "outputs/dia/505.wav"
+    }
   }
 ]
