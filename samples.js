@@ -1,8 +1,8 @@
 // Auto-generated from human_eval20/manifest.json
 //
-// Each sample has the same source dialogue rendered by 5 systems:
+// Each sample has the same source dialogue rendered by 3 systems:
 //   ours       = our model (ours_abs_10k)
-//   competitors = the 4 other systems we compare against
+//   competitors = the 2 other systems we compare against (moss_ttsd, dia)
 //
 // At runtime, every question pairs `ours` against ONE randomly-chosen
 // competitor (round-robin within a session for balanced coverage).
@@ -15,9 +15,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/032_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/032.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/032.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/032.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/032.wav",
       dia:             "human_eval20/outputs/dia/032.wav",
     },
   },
@@ -27,9 +25,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/044_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/044.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/044.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/044.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/044.wav",
       dia:             "human_eval20/outputs/dia/044.wav",
     },
   },
@@ -39,9 +35,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/049_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/049.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/049.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/049.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/049.wav",
       dia:             "human_eval20/outputs/dia/049.wav",
     },
   },
@@ -51,9 +45,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/104_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/104.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/104.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/104.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/104.wav",
       dia:             "human_eval20/outputs/dia/104.wav",
     },
   },
@@ -63,9 +55,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/120_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/120.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/120.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/120.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/120.wav",
       dia:             "human_eval20/outputs/dia/120.wav",
     },
   },
@@ -75,9 +65,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/129_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/129.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/129.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/129.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/129.wav",
       dia:             "human_eval20/outputs/dia/129.wav",
     },
   },
@@ -87,9 +75,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/142_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/142.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/142.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/142.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/142.wav",
       dia:             "human_eval20/outputs/dia/142.wav",
     },
   },
@@ -99,9 +85,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/162_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/162.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/162.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/162.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/162.wav",
       dia:             "human_eval20/outputs/dia/162.wav",
     },
   },
@@ -111,9 +95,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/226_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/226.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/226.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/226.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/226.wav",
       dia:             "human_eval20/outputs/dia/226.wav",
     },
   },
@@ -123,9 +105,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/237_spk2.flac",
     ours: "human_eval20/outputs/ours_abs_10k/237.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/237.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/237.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/237.wav",
       dia:             "human_eval20/outputs/dia/237.wav",
     },
   },
@@ -135,9 +115,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/259_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/259.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/259.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/259.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/259.wav",
       dia:             "human_eval20/outputs/dia/259.wav",
     },
   },
@@ -147,9 +125,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/319_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/319.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/319.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/319.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/319.wav",
       dia:             "human_eval20/outputs/dia/319.wav",
     },
   },
@@ -159,9 +135,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/499_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/499.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/499.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/499.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/499.wav",
       dia:             "human_eval20/outputs/dia/499.wav",
     },
   },
@@ -171,9 +145,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/641_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/641.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/641.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/641.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/641.wav",
       dia:             "human_eval20/outputs/dia/641.wav",
     },
   },
@@ -183,9 +155,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/686_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/686.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/686.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/686.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/686.wav",
       dia:             "human_eval20/outputs/dia/686.wav",
     },
   },
@@ -195,9 +165,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/721_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/721.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/721.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/721.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/721.wav",
       dia:             "human_eval20/outputs/dia/721.wav",
     },
   },
@@ -207,9 +175,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/795_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/795.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/795.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/795.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/795.wav",
       dia:             "human_eval20/outputs/dia/795.wav",
     },
   },
@@ -219,9 +185,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/798_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/798.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/798.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/798.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/798.wav",
       dia:             "human_eval20/outputs/dia/798.wav",
     },
   },
@@ -231,9 +195,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/951_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/951.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/951.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/951.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/951.wav",
       dia:             "human_eval20/outputs/dia/951.wav",
     },
   },
@@ -243,9 +205,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/053_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/053.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/053.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/053.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/053.wav",
       dia:             "human_eval20/outputs/dia/053.wav",
     },
   },
@@ -255,9 +215,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/163_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/163.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/163.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/163.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/163.wav",
       dia:             "human_eval20/outputs/dia/163.wav",
     },
   },
@@ -267,9 +225,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/358_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/358.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/358.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/358.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/358.wav",
       dia:             "human_eval20/outputs/dia/358.wav",
     },
   },
@@ -279,9 +235,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/762_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/762.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/762.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/762.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/762.wav",
       dia:             "human_eval20/outputs/dia/762.wav",
     },
   },
@@ -291,9 +245,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/855_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/855.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/855.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/855.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/855.wav",
       dia:             "human_eval20/outputs/dia/855.wav",
     },
   },
@@ -303,9 +255,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/179_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/179.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/179.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/179.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/179.wav",
       dia:             "human_eval20/outputs/dia/179.wav",
     },
   },
@@ -315,9 +265,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/298_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/298.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/298.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/298.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/298.wav",
       dia:             "human_eval20/outputs/dia/298.wav",
     },
   },
@@ -327,9 +275,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/159_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/159.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/159.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/159.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/159.wav",
       dia:             "human_eval20/outputs/dia/159.wav",
     },
   },
@@ -339,9 +285,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/685_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/685.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/685.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/685.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/685.wav",
       dia:             "human_eval20/outputs/dia/685.wav",
     },
   },
@@ -351,9 +295,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/828_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/828.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/828.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/828.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/828.wav",
       dia:             "human_eval20/outputs/dia/828.wav",
     },
   },
@@ -363,9 +305,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/013_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/013.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/013.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/013.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/013.wav",
       dia:             "human_eval20/outputs/dia/013.wav",
     },
   },
@@ -375,9 +315,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/406_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/406.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/406.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/406.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/406.wav",
       dia:             "human_eval20/outputs/dia/406.wav",
     },
   },
@@ -387,9 +325,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/215_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/215.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/215.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/215.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/215.wav",
       dia:             "human_eval20/outputs/dia/215.wav",
     },
   },
@@ -399,9 +335,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/064_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/064.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/064.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/064.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/064.wav",
       dia:             "human_eval20/outputs/dia/064.wav",
     },
   },
@@ -411,9 +345,7 @@ window.SAMPLES = [
     reference2: "human_eval20/refs/505_spk2.wav",
     ours: "human_eval20/outputs/ours_abs_10k/505.wav",
     competitors: {
-      zipvoice_dialog: "human_eval20/outputs/zipvoice_dialog/505.wav",
       moss_ttsd:       "human_eval20/outputs/moss_ttsd/505.wav",
-      vibevoice_7b:    "human_eval20/outputs/vibevoice_7b/505.wav",
       dia:             "human_eval20/outputs/dia/505.wav",
     },
   },
